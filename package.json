@@ -1,0 +1,30 @@
+{
+    "name": "curry",
+    "displayName": "Curry",
+    "description": "IDE for Curry",
+    "version": "0.0.1",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fwcd/vscode-curry-ide.git"
+    },
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "curry",
+            "aliases": ["Curry", "curry"],
+            "extensions": [".curry"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "curry",
+            "scopeName": "source.curry",
+            "path": "./syntaxes/curry.tmLanguage"
+        }]
+    }
+}
