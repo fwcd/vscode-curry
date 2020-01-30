@@ -4,6 +4,7 @@
     "description": "IDE for Curry",
     "version": "0.0.1",
     "icon": "icon.png",
+    "publisher": "fwcd",
     "repository": {
         "type": "git",
         "url": "https://github.com/fwcd/vscode-curry-ide.git"
