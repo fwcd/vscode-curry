@@ -29,7 +29,7 @@ export async function activeLanguageServer(context: vscode.ExtensionContext, con
     const serverOptions: ServerOptions = {
         command: config.get("languageServer.path")
     };
-    const languageClient = new LanguageClient("curry", "Curry Language Server", serverOptions, clientOptions);
+    const languageClient = new LanguageClient("curry", "Curry Language Client", serverOptions, clientOptions);
     
     // Start the language client
     let languageClientDisposable = languageClient.start();
