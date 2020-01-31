@@ -9,6 +9,10 @@
         "type": "git",
         "url": "https://github.com/fwcd/vscode-curry-ide.git"
     },
+    "scripts": {
+        "compile": "tsc -p .",
+        "watch": "tsc -w -p ."
+    },
     "engines": {
         "vscode": "^1.41.0"
     },
@@ -16,16 +20,48 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "curry",
-            "aliases": ["Curry", "curry"],
-            "extensions": [".curry"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "curry",
-            "scopeName": "source.curry",
-            "path": "./syntaxes/curry.tmLanguage"
-        }]
+        "languages": [
+            {
+                "id": "curry",
+                "aliases": [
+                    "Curry",
+                    "curry"
+                ],
+                "extensions": [
+                    ".curry"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "curry",
+                "scopeName": "source.curry",
+                "path": "./syntaxes/curry.tmLanguage"
+            }
+        ],
+        "configuration": {
+            "title": "Curry",
+            "properties": {
+                "curry.languageServer.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "[Recommended] Specifies whether the language server should be used."
+                },
+                "curry.languageServer.path": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The path to the language server executable."
+                }
+            }
+        }
+    },
+    "devDependencies": {
+        "typescript": "3.4.3",
+        "vsce": "1.72.0",
+        "vscode": "1.1.36"
+    },
+    "dependencies": {
+        "vscode-languageclient": "6.1.0"
     }
 }
