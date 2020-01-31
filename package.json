@@ -21,6 +21,10 @@
     "categories": [
         "Programming Languages"
     ],
+    "activationEvents": [
+        "onLanguage:curry"
+    ],
+    "main": "./out/extension",
     "contributes": {
         "languages": [
             {
