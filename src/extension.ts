@@ -23,6 +23,9 @@ export async function activeLanguageServer(context: vscode.ExtensionContext, con
         documentSelector: [
             { language: "curry", scheme: "file" }
         ],
+        synchronize: {
+            configurationSection: 'curry'
+        },
         outputChannel: outputChannel,
         revealOutputChannelOn: RevealOutputChannelOn.Never
     };
