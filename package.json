@@ -64,7 +64,12 @@
                 "curry.languageServer.path": {
                     "type": "string",
                     "default": "",
-                    "description": "The path to the language server executable."
+                    "description": "[Required] The path to the language server executable."
+                },
+                "curry.languageServer.importPaths": {
+                    "type": "array",
+                    "default": [],
+                    "description": "[Required] Path to a folder containing imported Curry modules (such as the Prelude). The language server repository includes such a folder ('curry-imports')."
                 }
             }
         }
