@@ -412,7 +412,7 @@
     <key>common_keywords</key>
     <dict>
       <key>match</key>
-      <string>\b(where|case|of|let|in|default|do|mdo|if|then|else|free)\b</string>
+      <string>\b(where|case|fcase|of|let|in|default|do|mdo|if|then|else|free)\b</string>
       <key>name</key>
       <string>keyword.other.curry</string>
     </dict>
