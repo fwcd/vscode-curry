@@ -44,6 +44,16 @@
                 "language": "curry",
                 "scopeName": "source.curry",
                 "path": "./syntaxes/curry.tmLanguage"
+            },
+            {
+                "scopeName": "markdown.curry.codeblock",
+                "path": "./syntaxes/codeblock-curry.json",
+                "injectTo": [
+                    "text.html.markdown"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.block.curry": "curry"
+                }
             }
         ],
         "commands": [
