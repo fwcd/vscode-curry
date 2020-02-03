@@ -13,7 +13,7 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
 export async function activeLanguageServer(context: vscode.ExtensionContext, config: vscode.WorkspaceConfiguration): Promise<void> {
     const path = config.get("languageServer.path");
     if (!path) {
-        vscode.window.showWarningMessage("Specify the path to a Curry Language Server executable to use IDE features!");
+        vscode.window.showWarningMessage("Specify the path to a Curry Language Server executable in your settings to use IDE features!");
         return
     }
     
