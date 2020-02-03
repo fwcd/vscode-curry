@@ -19,7 +19,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.other.haskell keyword.module.haskell</string>
+          <string>keyword.other.curry keyword.module.curry</string>
         </dict>
       </dict>
       <key>end</key>
@@ -29,11 +29,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.module.haskell</string>
+          <string>keyword.module.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.declaration.module.haskell</string>
+      <string>meta.declaration.module.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -64,20 +64,20 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.other.haskell keyword.import.haskell</string>
+          <string>keyword.other.curry keyword.import.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>(^(?!\s))</string>
       <key>name</key>
-      <string>meta.import.haskell</string>
+      <string>meta.import.curry</string>
       <key>patterns</key>
       <array>
         <dict>
           <key>match</key>
           <string>\b(qualified|as|hiding)\b</string>
           <key>name</key>
-          <string>keyword.other.haskell keyword.import.haskell</string>
+          <string>keyword.other.curry keyword.import.curry</string>
         </dict>
         <dict>
           <key>include</key>
@@ -101,15 +101,15 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>punctuation.definition.preprocessor.c punctuation.pragma.preprocessor.haskell</string>
+          <string>punctuation.definition.preprocessor.c punctuation.pragma.preprocessor.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>$</string>
       <key>comment</key>
-      <string>In addition to Haskell's "native" syntax, GHC permits the C preprocessor to be run on a source file.</string>
+      <string>In addition to curry's "native" syntax, GHC permits the C preprocessor to be run on a source file.</string>
       <key>name</key>
-      <string>meta.preprocessor.c pragma.preprocessor.haskell</string>
+      <string>meta.preprocessor.c pragma.preprocessor.curry</string>
     </dict>
     <dict>
       <key>include</key>
@@ -124,28 +124,28 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.foreign.haskell</string>
+          <string>keyword.declaration.foreign.curry</string>
         </dict>
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.foreign.haskell</string>
+          <string>keyword.declaration.foreign.curry</string>
         </dict>
         <key>3</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.foreign.haskell</string>
+          <string>keyword.declaration.foreign.curry</string>
         </dict>
         <key>5</key>
         <dict>
           <key>name</key>
-          <string>string.quoted.double.haskell</string>
+          <string>string.quoted.double.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!\s)</string>
       <key>name</key>
-      <string>meta.function.foreign-declaration.haskell</string>
+      <string>meta.function.foreign-declaration.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -180,14 +180,14 @@
         <key>0</key>
         <dict>
           <key>name</key>
-          <string>punctuation.comment.haskell</string>
+          <string>punctuation.comment.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>(?&lt;!#)-\}</string>
       <!-- ^ Using `(?&lt;!#)-\}` instead of `-\}` so that pragmas don't close block comments. `(?<!#)-}` is a negative lookbehind saying: match `-}` but not when there's a `#` in front of it. -->
       <key>name</key>
-      <string>comment.block.haskell</string>
+      <string>comment.block.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -210,12 +210,12 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>punctuation.comment.haskell</string>
+              <string>punctuation.comment.curry</string>
             </dict>
           </dict>
           <key>match</key>
           <string>(---*(?!([!#\$%&amp;\*\+\./&lt;=&gt;\?@\\\^\|\-~:]|[^[^\p{S}\p{P}]_"'\(\),;\[\]`\{}]))).*$\n?</string> 
-          <!-- ^ See https://www.haskell.org/onlinereport/haskell2010/haskellch10.html -->
+          <!-- ^ See https://www.curry.org/onlinereport/curry2010/currych10.html -->
           <!-- The difficulty is to forbid things that create valid operators. -->
           <!-- OK, now the explanation: -->
           <!-- First, we match "dashes": plus any number of further dashes. -->
@@ -234,7 +234,7 @@
           <!-- Other relevant info: -->
           <!-- Chars that have to be escaped in Sublime's regex engine: \^$.|?*+()[]{- -->
           <key>name</key>
-          <string>comment.line.haskell</string>
+          <string>comment.line.curry</string>
         </dict>
         <dict>
           <key>include</key>
@@ -247,7 +247,7 @@
       <key>match</key>
       <string>(\([^\w \)]+\)|\(,+\))</string>
       <key>name</key>
-      <string>keyword.operator.haskell</string>
+      <string>keyword.operator.curry</string>
     </dict>
     <key>module_exports</key>
     <dict>
@@ -258,7 +258,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>storage.module.haskell</string>
+          <string>storage.module.curry</string>
         </dict>
       </dict>
       <key>end</key>
@@ -268,46 +268,46 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>storage.module.haskell</string>
+          <string>storage.module.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.declaration.exports.haskell</string>
+      <string>meta.declaration.exports.curry</string>
       <key>patterns</key>
       <array>
         <dict>
-          <!-- tmLanguage cannot capture multiline regexes, that's why we can't simply add a `\\$\s*\\` alternative to `constant.character.escape.haskell` to capture the `\[newline][whitespace]\` Haskell uses for multi-line strings. We have to use begin/end if we want multi-line matches. -->
+          <!-- tmLanguage cannot capture multiline regexes, that's why we can't simply add a `\\$\s*\\` alternative to `constant.character.escape.curry` to capture the `\[newline][whitespace]\` curry uses for multi-line strings. We have to use begin/end if we want multi-line matches. -->
           <key>begin</key>
           <string>\\\s*$</string>
-          <!-- ^ We use `\s*` because Haskell multiline strings do allow whitespace behind the `\` that "ends" the line, even before the line actually ends. -->
+          <!-- ^ We use `\s*` because curry multiline strings do allow whitespace behind the `\` that "ends" the line, even before the line actually ends. -->
           <key>end</key>
           <string>\\</string>
           <key>name</key>
-          <string>constant.character.escape.multilinestring.haskell</string>
+          <string>constant.character.escape.multilinestring.curry</string>
           <!-- We do not currently attempt to detect characters in between the `\`, so `\\n   a   \` will have the `a` counted towards this scope. -->
         </dict>
         <dict>
           <key>match</key>
           <string>(?&lt;!')\b[a-z][\w']*</string>
-          <!-- ^ We have to prepend the negative lookbehind (?<!') to forbid single quotes before the word boundary. That is because in contrast to Python's re, Sublime's matching engine treats `my'str` as `my\b'\b'str`, thus detecting constants (constructors) in identifier names like `m'result`. Single quotes are the only such characters allowed in Haskell identifiers. -->
+          <!-- ^ We have to prepend the negative lookbehind (?<!') to forbid single quotes before the word boundary. That is because in contrast to Python's re, Sublime's matching engine treats `my'str` as `my\b'\b'str`, thus detecting constants (constructors) in identifier names like `m'result`. Single quotes are the only such characters allowed in curry identifiers. -->
           <key>name</key>
-          <string>entity.name.function.haskell</string>
+          <string>entity.name.function.curry</string>
         </dict>
         <dict>
           <key>begin</key>
           <string>(?&lt;!')\b([A-Z][\w']*)\s*(\()</string>
-          <!-- ^ We have to prepend the negative lookbehind (?<!') to forbid single quotes before the word boundary. That is because in contrast to Python's re, Sublime's matching engine treats `my'str` as `my\b'\b'str`, thus detecting constants (constructors) in identifier names like `m'result`. Single quotes are the only such characters allowed in Haskell identifiers. -->
+          <!-- ^ We have to prepend the negative lookbehind (?<!') to forbid single quotes before the word boundary. That is because in contrast to Python's re, Sublime's matching engine treats `my'str` as `my\b'\b'str`, thus detecting constants (constructors) in identifier names like `m'result`. Single quotes are the only such characters allowed in curry identifiers. -->
           <key>beginCaptures</key>
           <dict>
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>storage.type.haskell entity.name.data.haskell</string>
+              <string>storage.type.curry entity.name.data.curry</string>
             </dict>
             <key>2</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell</string>
+              <string>keyword.operator.curry</string>
             </dict>
           </dict>
           <key>end</key>
@@ -317,11 +317,11 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell</string>
+              <string>keyword.operator.curry</string>
             </dict>
           </dict>
           <key>name</key>
-          <string>meta.declaration.export.data.haskell</string>
+          <string>meta.declaration.export.data.curry</string>
           <key>patterns</key>
           <array>
             <dict>
@@ -333,15 +333,15 @@
         <dict>
           <key>match</key>
           <string>(?&lt;!')\b[A-Z][\w']*</string>
-          <!-- ^ We have to prepend the negative lookbehind (?<!') to forbid single quotes before the word boundary. That is because in contrast to Python's re, Sublime's matching engine treats `my'str` as `my\b'\b'str`, thus detecting constants (constructors) in identifier names like `m'result`. Single quotes are the only such characters allowed in Haskell identifiers. -->
+          <!-- ^ We have to prepend the negative lookbehind (?<!') to forbid single quotes before the word boundary. That is because in contrast to Python's re, Sublime's matching engine treats `my'str` as `my\b'\b'str`, thus detecting constants (constructors) in identifier names like `m'result`. Single quotes are the only such characters allowed in curry identifiers. -->
           <key>name</key>
-          <string>storage.type.haskell entity.name.data.haskell</string>
+          <string>storage.type.curry entity.name.data.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>,</string>
           <key>name</key>
-          <string>punctuation.separator.comma.haskell</string>
+          <string>punctuation.separator.comma.curry</string>
         </dict>
         <dict>
           <key>include</key>
@@ -353,7 +353,7 @@
           <key>match</key>
           <string>\(.*?\)</string>
           <key>name</key>
-          <string>meta.other.unknown.haskell</string>
+          <string>meta.other.unknown.curry</string>
         </dict>
         <dict>
           <key>include</key>
@@ -370,7 +370,7 @@
       <key>match</key>
       <string>([A-Z][\w']*)(\.[A-Z][\w']*)*</string>
       <key>name</key>
-      <string>storage.module.haskell</string>
+      <string>storage.module.curry</string>
     </dict>
     <key>pragma</key>
     <dict>
@@ -381,31 +381,31 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>punctuation.pragma.haskell</string>
+          <string>punctuation.pragma.curry</string>
         </dict>
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>keyword.preprocessor.haskell pragma.name.haskell</string>
+          <string>keyword.preprocessor.curry pragma.name.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>#-\}</string>
       <key>name</key>
-      <string>pragma.haskell</string>
+      <string>pragma.curry</string>
       <key>patterns</key>
       <array>
         <dict>
           <key>match</key>
           <string>\b([A-Z][a-z]*)+\b</string>
           <key>name</key>
-          <string>keyword.other.preprocessor.haskell pragma.support.language.haskell</string>
+          <string>keyword.other.preprocessor.curry pragma.support.language.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(-+[a-z]+)+</string>
           <key>name</key>
-          <string>keyword.other.preprocessor.haskell pragma.support.flag.haskell</string>
+          <string>keyword.other.preprocessor.curry pragma.support.flag.curry</string>
         </dict>
       </array>
     </dict>
@@ -414,7 +414,7 @@
       <key>match</key>
       <string>\b(where|case|of|let|in|default|do|mdo|if|then|else|free)\b</string>
       <key>name</key>
-      <string>keyword.other.haskell</string>
+      <string>keyword.other.curry</string>
     </dict>
     <key>literals</key>
     <dict>
@@ -426,13 +426,13 @@
           <key>match</key>
           <string>\b([0-9]+\.[0-9]+([eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+)\b</string>
           <key>name</key>
-          <string>constant.numeric.haskell</string>
+          <string>constant.numeric.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>\b([0-9]+|0([xX][0-9a-fA-F]+|[oO][0-7]+))\b</string>
           <key>name</key>
-          <string>constant.numeric.haskell</string>
+          <string>constant.numeric.curry</string>
         </dict>
         <dict>
           <key>begin</key>
@@ -442,7 +442,7 @@
             <key>0</key>
             <dict>
               <key>name</key>
-              <string>punctuation.definition.string.begin.haskell</string>
+              <string>punctuation.definition.string.begin.curry</string>
             </dict>
           </dict>
      -->      <key>end</key>
@@ -452,30 +452,30 @@
             <key>0</key>
             <dict>
               <key>name</key>
-              <string>punctuation.definition.string.end.haskell</string>
+              <string>punctuation.definition.string.end.curry</string>
             </dict>
           </dict>
      -->      <key>name</key>
-          <string>string.quoted.double.haskell</string>
+          <string>string.quoted.double.curry</string>
           <key>patterns</key>
           <array>
             <dict>
               <key>match</key>
               <string>\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[abfnrtv\\\"'\&amp;])</string>
               <key>name</key>
-              <string>constant.character.escape.haskell</string>
+              <string>constant.character.escape.curry</string>
             </dict>
             <dict>
               <key>match</key>
               <string>\\o[0-7]+|\\x[0-9A-Fa-f]+|\\[0-9]+</string>
               <key>name</key>
-              <string>constant.character.escape.octal.haskell</string>
+              <string>constant.character.escape.octal.curry</string>
             </dict>
             <dict>
               <key>match</key>
               <string>\^[A-Z@\[\]\\\^_]</string>
               <key>name</key>
-              <string>constant.character.escape.control.haskell</string>
+              <string>constant.character.escape.control.curry</string>
             </dict>
           </array>
         </dict>
@@ -485,32 +485,32 @@
     <!--        <key>1</key>
             <dict>
               <key>name</key>
-              <string>punctuation.definition.string.begin.haskell</string>
+              <string>punctuation.definition.string.begin.curry</string>
             </dict>
      -->        <key>2</key>
             <dict>
               <key>name</key>
-              <string>constant.character.escape.haskell</string>
+              <string>constant.character.escape.curry</string>
             </dict>
             <key>3</key>
             <dict>
               <key>name</key>
-              <string>constant.character.escape.octal.haskell</string>
+              <string>constant.character.escape.octal.curry</string>
             </dict>
             <key>4</key>
             <dict>
               <key>name</key>
-              <string>constant.character.escape.hexadecimal.haskell</string>
+              <string>constant.character.escape.hexadecimal.curry</string>
             </dict>
             <key>5</key>
             <dict>
               <key>name</key>
-              <string>constant.character.escape.control.haskell</string>
+              <string>constant.character.escape.control.curry</string>
             </dict>
     <!--        <key>6</key>
             <dict>
               <key>name</key>
-              <string>punctuation.definition.string.end.haskell</string>
+              <string>punctuation.definition.string.end.curry</string>
             </dict>
      -->      </dict>
           <key>match</key>
@@ -528,7 +528,7 @@
           (')
           </string>
           <key>name</key>
-          <string>string.quoted.single.haskell</string>
+          <string>string.quoted.single.curry</string>
         </dict>
       </array>
     </dict>
@@ -540,37 +540,37 @@
           <key>match</key>
           <string>-&gt;|→</string>
           <key>name</key>
-          <string>keyword.operator.arrow.haskell</string>
+          <string>keyword.operator.arrow.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>=&gt;|⇒</string>
           <key>name</key>
-          <string>keyword.operator.big-arrow.haskell</string>
+          <string>keyword.operator.big-arrow.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>\b(Int(eger)?|Maybe|Either|Bool|Float|Double|Char|String|Ordering|ShowS|ReadS|FilePath|IO(Error)?)\b</string>
           <key>name</key>
-          <string>storage.type.haskell support.type.haskell</string>
+          <string>storage.type.curry support.type.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(?&lt;!')\b[a-z][\w']*\b</string>
           <key>name</key>
-          <string>variable.generic.haskell</string>
+          <string>variable.generic.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(?&lt;!')\b[A-Z][\w']*\b</string>
           <key>name</key>
-          <string>storage.type.haskell</string>
+          <string>storage.type.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>\(\)</string>
           <key>name</key>
-          <string>storage.type.haskell</string>
+          <string>storage.type.curry</string>
         </dict>
         <dict>
           <key>begin</key>
@@ -580,7 +580,7 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell</string>
+              <string>keyword.operator.curry</string>
             </dict>
           </dict>
           <key>end</key>
@@ -590,11 +590,11 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell</string>
+              <string>keyword.operator.curry</string>
             </dict>
           </dict>
           <key>name</key>
-          <string>meta.type_signature.brace.haskell</string>
+          <string>meta.type_signature.brace.curry</string>
           <key>patterns</key>
           <array>
             <dict>
@@ -611,7 +611,7 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell</string>
+              <string>keyword.operator.curry</string>
             </dict>
           </dict>
           <key>end</key>
@@ -621,11 +621,11 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell</string>
+              <string>keyword.operator.curry</string>
             </dict>
           </dict>
           <key>name</key>
-          <string>meta.type_signature.list.haskell</string>
+          <string>meta.type_signature.list.curry</string>
           <key>patterns</key>
           <array>
             <dict>
@@ -664,13 +664,13 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>entity.name.function.haskell</string>
+          <string>entity.name.function.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!\1\s)|(?=})</string>
       <key>name</key>
-      <string>meta.declaration.function.haskell</string>
+      <string>meta.declaration.function.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -683,18 +683,18 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.other.double-colon.haskell</string>
+              <string>keyword.other.double-colon.curry</string>
             </dict>
           </dict>
           <key>name</key>
-          <string>meta.declaration.function.names.haskell</string>
+          <string>meta.declaration.function.names.curry</string>
           <key>patterns</key>
           <array>
             <dict>
               <key>match</key>
               <string>((?&lt;!')\b[a-z_][\w']*|\(\W+\))</string>
               <key>name</key>
-              <string>entity.name.function.haskell</string>
+              <string>entity.name.function.curry</string>
             </dict>
           </array>
         </dict>
@@ -713,7 +713,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>entity.name.function.haskell</string>
+          <string>entity.name.function.curry</string>
         </dict>
       </dict>
       <key>end</key>
@@ -723,11 +723,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.operator.haskell</string>
+          <string>keyword.operator.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.definition.function.haskell</string>
+      <string>meta.definition.function.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -747,11 +747,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>entity.name.function.haskell</string>
+          <string>entity.name.function.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.definition.function.haskell</string>
+      <string>meta.definition.function.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -771,11 +771,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.operator.haskell</string>
+          <string>keyword.operator.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.definition.function.haskell</string>
+      <string>meta.definition.function.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -786,7 +786,7 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>entity.name.function.haskell</string>
+              <string>entity.name.function.curry</string>
             </dict>
           </dict>
         </dict>
@@ -805,18 +805,18 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>entity.name.function.haskell</string>
+          <string>entity.name.function.curry</string>
         </dict>
         <key>3</key>
         <dict>
           <key>name</key>
-          <string>keyword.other.double-colon.haskell</string>
+          <string>keyword.other.double-colon.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!\s)</string>
       <key>name</key>
-      <string>meta.declaration.function.haskell</string>
+      <string>meta.declaration.function.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -834,18 +834,18 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>constant.other.haskell entity.name.constructor.haskell</string>
+          <string>constant.other.curry entity.name.constructor.curry</string>
         </dict>
         <key>3</key>
         <dict>
           <key>name</key>
-          <string>keyword.other.double-colon.haskell</string>
+          <string>keyword.other.double-colon.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!\1\s)</string>
       <key>name</key>
-      <string>meta.declaration.function.haskell</string>
+      <string>meta.declaration.function.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -863,7 +863,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.operator.haskell punctuation.record.haskell</string>
+          <string>keyword.operator.curry punctuation.record.curry</string>
         </dict>
       </dict>
       <key>end</key>
@@ -873,11 +873,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.operator.haskell punctuation.record.haskell</string>
+          <string>keyword.operator.curry punctuation.record.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.declaration.record.haskell</string>
+      <string>meta.declaration.record.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -897,7 +897,7 @@
       <key>end</key>
       <string>(?=[,}])</string>
       <key>name</key>
-      <string>meta.declaration.field.haskell</string>
+      <string>meta.declaration.field.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -908,13 +908,13 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.other.double-colon.haskell</string>
+              <string>keyword.other.double-colon.curry</string>
             </dict>
           </dict>
           <key>end</key>
           <string>(?=[,}])</string>
           <key>name</key>
-          <string>meta.declaration.field.signature.haskell</string>
+          <string>meta.declaration.field.signature.curry</string>
           <key>patterns</key>
           <array>
             <dict>
@@ -927,7 +927,7 @@
           <key>match</key>
           <string>((?&lt;!')\b[a-z_][\w']*|\(\W+\))</string>
           <key>name</key>
-          <string>entity.name.function.haskell</string>
+          <string>entity.name.function.curry</string>
         </dict>
       </array>
     </dict>
@@ -936,7 +936,7 @@
       <key>match</key>
       <string>\b(deriving)\b</string>
       <key>name</key>
-      <string>keyword.other.haskell keyword.declaration.data.haskell</string>
+      <string>keyword.other.curry keyword.declaration.data.curry</string>
     </dict>
     <key>type_declaration</key>
     <dict>
@@ -947,18 +947,18 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.data.haskell</string>
+          <string>keyword.declaration.data.curry</string>
         </dict>
         <key>3</key>
         <dict>
           <key>name</key>
-          <string>constant.other.haskell entity.name.type.haskell</string>
+          <string>constant.other.curry entity.name.type.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!\1\s)</string>
       <key>name</key>
-      <string>meta.declaration.type.haskell</string>
+      <string>meta.declaration.type.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -969,7 +969,7 @@
           <key>match</key>
           <string>=</string>
           <key>name</key>
-          <string>keyword.operator.haskell</string>
+          <string>keyword.operator.curry</string>
         </dict>
         <dict>
           <key>include</key>
@@ -986,25 +986,25 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.data.haskell</string>
+          <string>keyword.declaration.data.curry</string>
         </dict>
         <key>3</key>
         <dict>
           <key>name</key>
-          <string>constant.other.haskell entity.name.type.haskell</string>
+          <string>constant.other.curry entity.name.type.curry</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!\1\s)</string>
       <key>name</key>
-      <string>meta.declaration.data.haskell</string>
+      <string>meta.declaration.data.curry</string>
       <key>patterns</key>
       <array>
         <dict>
           <key>match</key>
           <string>where</string>
           <key>name</key>
-          <string>keyword.declaration.data.haskell</string>
+          <string>keyword.declaration.data.curry</string>
         </dict>
         <dict>
           <key>begin</key>
@@ -1014,7 +1014,7 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell</string>
+              <string>keyword.operator.curry</string>
             </dict>
           </dict>
           <key>end</key>
@@ -1024,7 +1024,7 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>constant.other.haskell entity.name.constructor.haskell</string>
+              <string>constant.other.curry entity.name.constructor.curry</string>
             </dict>
           </dict>
           <key>patterns</key>
@@ -1066,7 +1066,7 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.class.haskell</string>
+          <string>keyword.declaration.class.curry</string>
         </dict>
       </dict>
       <key>end</key>
@@ -1076,11 +1076,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.class.haskell</string>
+          <string>keyword.declaration.class.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.declaration.class.haskell</string>
+      <string>meta.declaration.class.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -1098,7 +1098,7 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.instance.haskell</string>
+          <string>keyword.declaration.instance.curry</string>
         </dict>
       </dict>
       <key>end</key>
@@ -1108,11 +1108,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>keyword.declaration.instance.haskell</string>
+          <string>keyword.declaration.instance.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.declaration.instance.haskell</string>
+      <string>meta.declaration.instance.curry</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -1130,7 +1130,7 @@
       <key>match</key>
       <string>\binfix[lr]?\b</string>
       <key>name</key>
-      <string>keyword.declaration.fixity.haskell</string>
+      <string>keyword.declaration.fixity.curry</string>
     </dict>
     <key>function_declarations</key>
     <dict>
@@ -1189,17 +1189,17 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>punctuation.quasi-quoter.haskell keyword.operator.haskell</string>
+          <string>punctuation.quasi-quoter.curry keyword.operator.curry</string>
         </dict>
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>entity.name.function.haskell</string>
+          <string>entity.name.function.curry</string>
         </dict>
         <key>3</key>
         <dict>
           <key>name</key>
-          <string>punctuation.quasi-quoter.haskell keyword.operator.haskell</string>
+          <string>punctuation.quasi-quoter.curry keyword.operator.curry</string>
         </dict>
       </dict>
       <key>end</key>
@@ -1209,11 +1209,11 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>punctuation.quasi-quoter.haskell keyword.operator.haskell</string>
+          <string>punctuation.quasi-quoter.curry keyword.operator.curry</string>
         </dict>
       </dict>
       <key>name</key>
-      <string>string.quoted.quasi.haskell</string>
+      <string>string.quoted.quasi.curry</string>
     </dict>
     <key>ctor_names</key>
     <dict>
@@ -1223,13 +1223,13 @@
           <key>match</key>
           <string>(?&lt;!')\b[A-Z][\w']*</string>
           <key>name</key>
-          <string>constant.other.haskell entity.name.constructor.haskell</string>
+          <string>constant.other.curry entity.name.constructor.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>\(\)</string>
           <key>name</key>
-          <string>constant.other.haskell entity.name.constructor.haskell</string>
+          <string>constant.other.curry entity.name.constructor.curry</string>
         </dict>
       </array>
     </dict>
@@ -1241,19 +1241,19 @@
           <key>match</key>
           <string>([A-Z][\w']*\.)+</string>
           <key>name</key>
-          <string>storage.module.haskell entity.name.module.haskell</string>
+          <string>storage.module.curry entity.name.module.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>\b(abs|acos|acosh|all|and|any|appendFile|asTypeOf|asin|asinh|atan|atan2|atanh|break|ceiling|compare|concat|concatMap|const|cos|cosh|curry|cycle|decodeFloat|div|divMod|drop|dropWhile|either|elem|encodeFloat|enumFrom|enumFromThen|enumFromThenTo|enumFromTo|even|exp|exponent|fail|filter|flip|floatDigits|floatRadix|floatRange|floor|fmap|foldl|foldl1|foldr|foldr1|fromEnum|fromInteger|fromIntegral|fromRational|fst|gcd|getChar|getContents|getLine|head|id|init|interact|ioError|isDenormalized|isIEEE|isInfinite|isNaN|isNegativeZero|iterate|last|lcm|length|lex|lines|log|logBase|lookup|map|mapM|mapM_|max|maxBound|maximum|maybe|min|minBound|minimum|mod|negate|not|notElem|null|odd|or|otherwise|pi|pred|print|product|properFraction|putChar|putStr|putStrLn|quot|quotRem|read|readFile|readIO|readList|readLn|readParen|reads|readsPrec|realToFrac|recip|rem|repeat|replicate|return|reverse|round|scaleFloat|scanl|scanl1|scanr|scanr1|seq|sequence|sequence_|show|showChar|showList|showParen|showString|shows|showsPrec|significand|signum|sin|sinh|snd|span|splitAt|sqrt|subtract|succ|sum|tail|take|takeWhile|tan|tanh|toEnum|toInteger|toRational|truncate|uncurry|unlines|until|unwords|unzip|unzip3|userError|words|writeFile|zip|zip3|zipWith|zipWith3)\b</string>
           <key>name</key>
-          <string>support.function.prelude.haskell</string>
+          <string>support.function.prelude.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>\b(error|undefined)\b</string>
           <key>name</key>
-          <string>support.function.prelude.haskell invalid.haskell</string>
+          <string>support.function.prelude.curry invalid.curry</string>
         </dict>
         <dict>
           <key>include</key>
@@ -1265,13 +1265,13 @@
           <key>match</key>
           <string>\[|\]</string>
           <key>name</key>
-          <string>keyword.operator.haskell punctuation.list.haskell</string>
+          <string>keyword.operator.curry punctuation.list.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>,</string>
           <key>name</key>
-          <string>punctuation.separator.comma.haskell</string>
+          <string>punctuation.separator.comma.curry</string>
         </dict>
         <dict>
           <key>captures</key>
@@ -1279,20 +1279,20 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>punctuation.definition.entity.haskell</string>
+              <string>punctuation.definition.entity.curry</string>
             </dict>
             <key>3</key>
             <dict>
               <key>name</key>
-              <string>punctuation.definition.entity.haskell</string>
+              <string>punctuation.definition.entity.curry</string>
             </dict>
           </dict>
           <key>comment</key>
-          <string>In case this regex seems unusual for an infix operator, note that Haskell allows any ordinary function application (elem 4 [1..10]) to be rewritten as an infix expression (4 `elem` [1..10]).</string>
+          <string>In case this regex seems unusual for an infix operator, note that curry allows any ordinary function application (elem 4 [1..10]) to be rewritten as an infix expression (4 `elem` [1..10]).</string>
           <key>match</key>
           <string>(`)([A-Z][\w']*\.)*[a-z][\w']*(`)</string>
           <key>name</key>
-          <string>keyword.operator.function.infix.haskell</string>
+          <string>keyword.operator.function.infix.curry</string>
         </dict>
         <dict>
           <key>begin</key>
@@ -1302,7 +1302,7 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell punctuation.record.haskell</string>
+              <string>keyword.operator.curry punctuation.record.curry</string>
             </dict>
           </dict>
           <key>end</key>
@@ -1312,11 +1312,11 @@
             <key>1</key>
             <dict>
               <key>name</key>
-              <string>keyword.operator.haskell punctuation.record.haskell</string>
+              <string>keyword.operator.curry punctuation.record.curry</string>
             </dict>
           </dict>
           <key>name</key>
-          <string>record.expression.haskell</string>
+          <string>record.expression.curry</string>
           <key>patterns</key>
           <array>
             <dict>
@@ -1327,7 +1327,7 @@
                 <key>2</key>
                 <dict>
                   <key>name</key>
-                  <string>keyword.operator.haskell</string>
+                  <string>keyword.operator.curry</string>
                 </dict>
               </dict>
             </dict>
@@ -1341,13 +1341,13 @@
           <key>match</key>
           <string>\(\)</string>
           <key>name</key>
-          <string>constant.other.haskell entity.name.constructor.haskell</string>
+          <string>constant.other.curry entity.name.constructor.curry</string>
         </dict>
         <dict>
           <key>match</key>
           <string>\[\]</string>
           <key>name</key>
-          <string>constant.other.haskell entity.name.constructor.haskell</string>
+          <string>constant.other.curry entity.name.constructor.curry</string>
         </dict>
         <dict>
           <key>include</key>
@@ -1355,11 +1355,11 @@
         </dict>
         <dict>
           <key>comment</key>
-          <string>In case this regex seems overly general, note that Haskell permits the definition of new operators which can be nearly any string of punctuation characters, such as $%^&amp;*.</string>
+          <string>In case this regex seems overly general, note that curry permits the definition of new operators which can be nearly any string of punctuation characters, such as $%^&amp;*.</string>
           <key>match</key>
           <string>[@|!%$?~+:.\-*=&lt;/&gt;\\∘→⇒⇔←⇐≤≥≡⋮\[\]]+</string>
           <key>name</key>
-          <string>keyword.operator.haskell</string>
+          <string>keyword.operator.curry</string>
         </dict>
         <dict>
           <key>include</key>
