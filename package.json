@@ -79,7 +79,12 @@
                 "curry.languageServer.importPaths": {
                     "type": "array",
                     "default": [],
-                    "description": "[Required] Path to a folder containing imported Curry modules (such as the Prelude). The language server repository includes such a folder ('curry-imports')."
+                    "description": "Directories for the Curry compiler to search in for imports."
+                },
+                "curry.languageServer.libraryPaths": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Directories for the Curry compiler to search in for libraries."
                 }
             }
         }
