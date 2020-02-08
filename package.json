@@ -102,6 +102,11 @@
                     "type": "array",
                     "default": [],
                     "description": "Directories for the Curry compiler to search in for libraries."
+                },
+                "curry.languageServer.forceRecompilation": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Forces recompilation of Curry modules"
                 }
             }
         }
