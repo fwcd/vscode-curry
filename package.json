@@ -55,12 +55,12 @@
             {
                 "language": "curry",
                 "scopeName": "source.curry",
-                "path": "./syntaxes/curry.tmLanguage"
+                "path": "./syntaxes/curry.tmLanguage.json"
             },
             {
                 "language": "icurry",
                 "scopeName": "source.icurry",
-                "path": "./syntaxes/icurry.tmLanguage"
+                "path": "./syntaxes/icurry.tmLanguage.json"
             },
             {
                 "scopeName": "markdown.curry.codeblock",
