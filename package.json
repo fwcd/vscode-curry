@@ -107,6 +107,17 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Forces recompilation of Curry modules"
+                },
+                "curry.trace.server": {
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VSCode and the Curry language server",
+                    "scope": "window"
                 }
             }
         }
