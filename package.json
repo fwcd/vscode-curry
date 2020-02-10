@@ -108,6 +108,21 @@
                     "default": false,
                     "description": "Forces recompilation of Curry modules"
                 },
+                "curry.languageServer.logLevel": {
+                    "type": "string",
+                    "enum": [
+                        "debug",
+                        "info",
+                        "notice",
+                        "warning",
+                        "error",
+                        "critical",
+                        "alert",
+                        "emergency"
+                    ],
+                    "default": "info",
+                    "description": "The language server's logging level"
+                },
                 "curry.trace.server": {
                     "type": "string",
                     "enum": [
