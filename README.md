@@ -1,4 +1,5 @@
 # Curry IDE for Visual Studio Code
+IDE support for the functional logic programming language [Curry](https://en.wikipedia.org/wiki/Curry_(programming_language)).
 
 ## Usage
 Build the [Curry Language Server](https://github.com/fwcd/curry-language-server) and point the `curry.languageServer.path` option to the built executable.
