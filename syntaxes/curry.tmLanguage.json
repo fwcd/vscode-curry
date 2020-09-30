@@ -436,6 +436,19 @@
                 }
             ]
         },
+        "external_function_definition": {
+            "begin": "^\\s*(?<!')\\b([a-z_][\\w']*|\\(\\W+\\))\\s+(external)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.curry"
+                },
+                "2": {
+                    "name": "keyword.declaration.external.curry"
+                }
+            },
+            "end": "^(?!\\s)",
+            "name": "meta.definition.function.curry"
+        },
         "pattern_function_definition": {
             "begin": "^\\s*(?=\\(.*\\)|\\[.*\\]|([A-Z][\\w']*(\\s+([\\w\\s,']*|\\(.*\\)|\\[.*\\]|\\{.*\\}))*)\\s*=)",
             "end": "(=)",
@@ -683,6 +696,9 @@
                 },
                 {
                     "include": "#infix_function_definition"
+                },
+                {
+                    "include": "#external_function_definition"
                 },
                 {
                     "include": "#fixity_declaration"
