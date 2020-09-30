@@ -2,7 +2,7 @@
     "name": "curry",
     "displayName": "Curry",
     "description": "IDE for Curry",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "icon": "icon.png",
     "publisher": "fwcd",
     "repository": {
