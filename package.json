@@ -94,6 +94,11 @@
                     "default": "",
                     "description": "[Required] The path to the language server executable."
                 },
+                "curry.languageServer.cpmPath": {
+                    "type": "string",
+                    "default": "cypm",
+                    "description": "The path to the Curry Package Manager executable."
+                },
                 "curry.languageServer.importPaths": {
                     "type": "array",
                     "default": [],
