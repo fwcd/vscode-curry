@@ -12,8 +12,8 @@
     "scripts": {
         "compile": "tsc -p .",
         "watch": "tsc -w -p .",
-        "packageextension": "vsce package",
-        "publishextension": "vsce publish"
+        "package-extension": "vsce package",
+        "publish-extension": "vsce publish"
     },
     "engines": {
         "vscode": "^1.52.0"
