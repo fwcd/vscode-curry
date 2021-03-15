@@ -9,13 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: olegtarasov/get-tag@v2.1
+        id: tag_name
+        with:
+          tagRegex: "v(.*)"
+          tagRegexGroup: 1
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: '12'
       - name: Install dependencies
         run: npm install
-      - name: Build and package extension
+      - name: Compile extension
+        run: npm run compile
+      - name: Package extension
         run: npm run package-extension -- -o curry.vsix
       - name: Create release
         uses: actions/create-release@v1
@@ -23,8 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Version ${{ github.ref }}
+          tag_name: ${{ steps.tag_name.outputs.tag }}
+          release_name: Version ${{ steps.tag_name.outputs.tag }}
           draft: false
           prerelease: false
       - name: Upload asset
@@ -34,7 +41,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./curry.vsix
-          asset_name: curry-${{ github.ref }}.vsix
+          asset_name: curry-${{ steps.tag_name.outputs.tag }}.vsix
           asset_content_type: application/zip
       - name: Publish extension to VSC marketplace
         run: npm run publish-extension -- -p $VSC_TOKEN
