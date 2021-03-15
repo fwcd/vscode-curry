@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { LanguageClient, ServerOptions, LanguageClientOptions, RevealOutputChannelOn } from "vscode-languageclient";
+import { LanguageClient, ServerOptions, LanguageClientOptions, RevealOutputChannelOn, TransportKind } from "vscode-languageclient/node";
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
     const curryConfig = vscode.workspace.getConfiguration("curry");
@@ -27,10 +27,12 @@ export async function activeLanguageServer(context: vscode.ExtensionContext, con
             configurationSection: 'curry'
         },
         outputChannel: outputChannel,
+        progressOnInitialization: true,
         revealOutputChannelOn: RevealOutputChannelOn.Never
     };
     const serverOptions: ServerOptions = {
-        command: config.get("languageServer.path")
+        command: config.get("languageServer.path"),
+        transport: TransportKind.stdio
     };
     const languageClient = new LanguageClient("curry", "Curry Language Client", serverOptions, clientOptions);
     
