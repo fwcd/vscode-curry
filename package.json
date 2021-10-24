@@ -143,9 +143,10 @@
         }
     },
     "devDependencies": {
-        "@types/vscode": "^1.52.0",
+        "@types/vscode": "^1.61.0",
+        "@types/node": "^16.11.4",
         "typescript": "^3.9.3",
-        "vsce": "^1.72.0"
+        "vsce": "^1.100.2"
     },
     "dependencies": {
         "vscode-languageclient": "^7.0.0"
