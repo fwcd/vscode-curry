@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import * as process from "process";
 import { LanguageClient, ServerOptions, LanguageClientOptions, RevealOutputChannelOn, TransportKind } from "vscode-languageclient/node";
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
@@ -32,6 +33,12 @@ export async function activeLanguageServer(context: vscode.ExtensionContext, con
     };
     const serverOptions: ServerOptions = {
         command: config.get("languageServer.path"),
+        options: {
+            env: {
+                ...process.env,
+                LC_ALL: "en_US.UTF-8"
+            }
+        },
         transport: TransportKind.stdio
     };
     const languageClient = new LanguageClient("curry", "Curry Language Client", serverOptions, clientOptions);
