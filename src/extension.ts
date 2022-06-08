@@ -2,6 +2,8 @@ import * as vscode from "vscode";
 import * as process from "process";
 import { LanguageClient, ServerOptions, LanguageClientOptions, RevealOutputChannelOn, TransportKind } from "vscode-languageclient/node";
 
+let languageClient: LanguageClient | undefined;
+
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
     const curryConfig = vscode.workspace.getConfiguration("curry");
     const langServerEnabled = curryConfig.get("languageServer.enabled");
@@ -9,6 +11,11 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
     if (langServerEnabled) {
         activeLanguageServer(context, curryConfig);
     }
+}
+
+export async function deactivate(): Promise<void> {
+    if (!languageClient) { return; }
+    return await languageClient.stop();
 }
 
 export async function activeLanguageServer(context: vscode.ExtensionContext, config: vscode.WorkspaceConfiguration): Promise<void> {
@@ -41,21 +48,9 @@ export async function activeLanguageServer(context: vscode.ExtensionContext, con
         },
         transport: TransportKind.stdio
     };
-    const languageClient = new LanguageClient("curry", "Curry Language Client", serverOptions, clientOptions);
+
+    languageClient = new LanguageClient("curry", "Curry Language Client", serverOptions, clientOptions);
     
     // Start the language client
-    let languageClientDisposable = languageClient.start();
-    context.subscriptions.push(languageClientDisposable);
-    
-    context.subscriptions.push(vscode.commands.registerCommand("curry.languageServer.restart", async () => {
-        await languageClient.stop();
-        languageClientDisposable.dispose();
-        
-        outputChannel.appendLine("");
-        outputChannel.appendLine(" === Language Server Restart ===");
-        outputChannel.appendLine("");
-        
-        languageClientDisposable = languageClient.start();
-        context.subscriptions.push(languageClientDisposable);
-    }));
+    languageClient.start();
 }
