@@ -13,6 +13,9 @@
         },
         {
             "include": "#instance_declaration"
+        },
+        {
+            "include": "#function_declarations"
         }
     ],
     "repository": {
@@ -66,6 +69,44 @@
                 }
             },
             "patterns": [
+                {
+                    "include": "#type"
+                }
+            ]
+        },
+        "function_declarations": {
+            "patterns": [
+                {
+                    "include": "#function_signature"
+                }
+            ]
+        },
+        "function_signature": {
+            "begin": "^(\\s*)(?:(\\(\\W\\)|[\\w']+)|[\\(\\[])(?=[\\w',\\s\\[\\]\\(\\)]*((?:::)|∷))",
+            "beginCaptures": {
+                "2": {
+                    "name": "entity.name.function.icurry"
+                }
+            },
+            "end": ";",
+            "name": "meta.declaration.function.icurry",
+            "patterns": [
+                {
+                    "begin": "(?=.*((::)|∷))",
+                    "end": "((::)|∷)",
+                    "endCaptures": {
+                        "1": {
+                            "name": "keyword.other.double-colon.icurry"
+                        }
+                    },
+                    "name": "meta.declaration.function.names.icurry",
+                    "patterns": [
+                        {
+                            "match": "((?<!')\\b[a-z_][\\w']*|\\(\\W+\\))",
+                            "name": "entity.name.function.icurry"
+                        }
+                    ]
+                },
                 {
                     "include": "#type"
                 }
