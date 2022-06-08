@@ -101,12 +101,15 @@
         "function_declarations": {
             "patterns": [
                 {
+                    "include": "#infix_function_definition"
+                },
+                {
                     "include": "#function_signature"
                 }
             ]
         },
         "function_signature": {
-            "begin": "(?:\\b(\\w+)|(\\([^\\)]+\\)))\\s+(\\d+)(\\s*(::))?",
+            "begin": "(?:\\b(\\w+)|(\\([^\\)]+\\)))(?:\\s+(\\d+))?(?:\\s*(::))?",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function.icurry"
@@ -115,7 +118,7 @@
                     "name": "entity.name.function.operator.icurry"
                 },
                 "3": {
-                    "name": "constant.numeric.icurry constant.arity.icurry"
+                    "name": "constant.numeric.arity.icurry"
                 },
                 "4": {
                     "name": "keyword.other.double-colon.icurry"
@@ -128,6 +131,18 @@
                     "include": "#type"
                 }
             ]
+        },
+        "infix_function_definition": {
+            "begin": "\\b(infix(?:[rl])?)\\s+(\\d+)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.infix.icurry"
+                },
+                "2": {
+                    "name": "constant.numeric.fixity.icurry"
+                }
+            },
+            "end": ";|}"
         },
         "pragma": {
             "begin": "(\\{-#)\\s+([A-Z_]+)\\b",
