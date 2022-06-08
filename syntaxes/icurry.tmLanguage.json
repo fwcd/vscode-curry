@@ -18,6 +18,9 @@
             "include": "#instance_declaration"
         },
         {
+            "include": "#class_declaration"
+        },
+        {
             "include": "#function_declarations"
         },
         {
@@ -126,6 +129,26 @@
             },
             "end": ";|}",
             "name": "meta.declaration.function.icurry",
+            "patterns": [
+                {
+                    "include": "#type"
+                }
+            ]
+        },
+        "class_declaration": {
+            "name": "meta.declaration.class.icurry",
+            "begin": "\\b(class)\\b",
+            "end": "{",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.icurry"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword.other.scope.icurry"
+                }
+            },
             "patterns": [
                 {
                     "include": "#type"
