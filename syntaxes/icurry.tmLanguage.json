@@ -6,25 +6,116 @@
     "name": "Curry Interface",
     "patterns": [
         {
-            "include": "#interface"
+            "include": "#interface_declaration"
+        },
+        {
+            "include": "#instance_declaration"
         }
     ],
     "repository": {
-        "interface": {
+        "interface_declaration": {
             "name": "meta.declaration.interface.icurry",
-            "begin": "\\b(interface)\\s+(\\w+)\\s+(where)\\s*{",
-            "end": "}",
+            "begin": "\\b(interface)\\b",
+            "end": "\\b(where)\\s*{",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.other.icurry"
-                },
-                "2": {
-                    "name": "entity.name.type.icurry"
-                },
-                "3": {
+                }
+            },
+            "endCaptures": {
+                "1": {
                     "name": "keyword.other.scope.icurry"
                 }
-            }
+            },
+            "patterns": [
+                {
+                    "include": "#type"
+                }
+            ]
+        },
+        "instance_declaration": {
+            "name": "meta.declaration.instance.icurry",
+            "begin": "\\b(instance)\\b",
+            "end": "{",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.icurry"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword.other.scope.icurry"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#type"
+                }
+            ]
+        },
+        "type": {
+            "patterns": [
+                {
+                    "match": "->|→",
+                    "name": "keyword.operator.arrow.curry"
+                },
+                {
+                    "match": "=>|⇒",
+                    "name": "keyword.operator.big-arrow.curry"
+                },
+                {
+                    "match": "(?<!')\\b[a-z][\\w']*\\b",
+                    "name": "variable.generic.curry"
+                },
+                {
+                    "match": "(?<!')\\b[A-Z][\\w']*\\b",
+                    "name": "storage.type.curry"
+                },
+                {
+                    "match": "\\(\\)",
+                    "name": "storage.type.curry"
+                },
+                {
+                    "begin": "(\\()",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.curry"
+                        }
+                    },
+                    "end": "(\\))",
+                    "endCaptures": {
+                        "1": {
+                            "name": "keyword.operator.curry"
+                        }
+                    },
+                    "name": "meta.type_signature.brace.curry",
+                    "patterns": [
+                        {
+                            "include": "#type"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(\\[)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.curry"
+                        }
+                    },
+                    "end": "(\\])",
+                    "endCaptures": {
+                        "1": {
+                            "name": "keyword.operator.curry"
+                        }
+                    },
+                    "name": "meta.type_signature.list.curry",
+                    "patterns": [
+                        {
+                            "include": "#type"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "scopeName": "source.icurry"
