@@ -16,6 +16,9 @@
         },
         {
             "include": "#function_declarations"
+        },
+        {
+            "include": "#pragma"
         }
     ],
     "repository": {
@@ -109,6 +112,34 @@
                 },
                 {
                     "include": "#type"
+                }
+            ]
+        },
+        "pragma": {
+            "begin": "(\\{-#)\\s+([A-Z_]+)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.preprocessor.icurry punctuation.pragma.icurry"
+                },
+                "2": {
+                    "name": "keyword.preprocessor.icurry pragma.name.icurry"
+                }
+            },
+            "end": "(#-\\})",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.preprocessor.icurry punctuation.pragma.icurry"
+                }
+            },
+            "name": "meta.preprocessor.icurry pragma.icurry",
+            "patterns": [
+                {
+                    "match": "\\b([A-Z][a-z]*)+\\b",
+                    "name": "keyword.other.preprocessor.icurry pragma.support.language.icurry"
+                },
+                {
+                    "match": "(-+[a-z]+)+",
+                    "name": "keyword.other.preprocessor.icurry pragma.support.flag.icurry"
                 }
             ]
         },
