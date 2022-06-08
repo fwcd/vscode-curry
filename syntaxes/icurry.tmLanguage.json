@@ -191,10 +191,13 @@
         },
         "data_declaration": {
             "name": "meta.declaration.data.icurry",
-            "begin": "\\b(data)",
+            "begin": "\\b(data)|(newtype)",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.declaration.data.icurry"
+                },
+                "2": {
+                    "name": "keyword.declaration.newtype.icurry"
                 }
             },
             "end": ";|}",
