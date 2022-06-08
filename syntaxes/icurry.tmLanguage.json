@@ -21,6 +21,12 @@
             "include": "#class_declaration"
         },
         {
+            "include": "#data_declaration"
+        },
+        {
+            "include": "#type_declaration"
+        },
+        {
             "include": "#function_declarations"
         },
         {
@@ -156,6 +162,7 @@
             ]
         },
         "infix_function_definition": {
+            "name": "meta.declaration.function.infix.icurry",
             "begin": "\\b(infix(?:[rl])?)\\s+(\\d+)",
             "beginCaptures": {
                 "1": {
@@ -166,6 +173,36 @@
                 }
             },
             "end": ";|}"
+        },
+        "type_declaration": {
+            "name": "meta.declaration.type.icurry",
+            "begin": "\\b(type)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.declaration.type.icurry"
+                }
+            },
+            "end": ";|}",
+            "patterns": [
+                {
+                    "include": "#type"
+                }
+            ]
+        },
+        "data_declaration": {
+            "name": "meta.declaration.data.icurry",
+            "begin": "\\b(data)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.declaration.data.icurry"
+                }
+            },
+            "end": ";|}",
+            "patterns": [
+                {
+                    "include": "#type"
+                }
+            ]
         },
         "pragma": {
             "begin": "(\\{-#)\\s+([A-Z_]+)\\b",
