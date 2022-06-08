@@ -6,6 +6,9 @@
     "name": "Curry Interface",
     "patterns": [
         {
+            "include": "#import"
+        },
+        {
             "include": "#interface_declaration"
         },
         {
@@ -13,6 +16,21 @@
         }
     ],
     "repository": {
+        "import": {
+            "begin": "^(import)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.icurry keyword.import.icurry"
+                }
+            },
+            "end": ";",
+            "name": "meta.import.icurry",
+            "patterns": [
+                {
+                    "include": "#module_name"
+                }
+            ]
+        },
         "interface_declaration": {
             "name": "meta.declaration.interface.icurry",
             "begin": "\\b(interface)\\b",
@@ -57,38 +75,38 @@
             "patterns": [
                 {
                     "match": "->|→",
-                    "name": "keyword.operator.arrow.curry"
+                    "name": "keyword.operator.arrow.icurry"
                 },
                 {
                     "match": "=>|⇒",
-                    "name": "keyword.operator.big-arrow.curry"
+                    "name": "keyword.operator.big-arrow.icurry"
                 },
                 {
                     "match": "(?<!')\\b[a-z][\\w']*\\b",
-                    "name": "variable.generic.curry"
+                    "name": "variable.generic.icurry"
                 },
                 {
                     "match": "(?<!')\\b[A-Z][\\w']*\\b",
-                    "name": "storage.type.curry"
+                    "name": "storage.type.icurry"
                 },
                 {
                     "match": "\\(\\)",
-                    "name": "storage.type.curry"
+                    "name": "storage.type.icurry"
                 },
                 {
                     "begin": "(\\()",
                     "beginCaptures": {
                         "1": {
-                            "name": "keyword.operator.curry"
+                            "name": "keyword.operator.icurry"
                         }
                     },
                     "end": "(\\))",
                     "endCaptures": {
                         "1": {
-                            "name": "keyword.operator.curry"
+                            "name": "keyword.operator.icurry"
                         }
                     },
-                    "name": "meta.type_signature.brace.curry",
+                    "name": "meta.type_signature.brace.icurry",
                     "patterns": [
                         {
                             "include": "#type"
@@ -99,16 +117,16 @@
                     "begin": "(\\[)",
                     "beginCaptures": {
                         "1": {
-                            "name": "keyword.operator.curry"
+                            "name": "keyword.operator.icurry"
                         }
                     },
                     "end": "(\\])",
                     "endCaptures": {
                         "1": {
-                            "name": "keyword.operator.curry"
+                            "name": "keyword.operator.icurry"
                         }
                     },
-                    "name": "meta.type_signature.list.curry",
+                    "name": "meta.type_signature.list.icurry",
                     "patterns": [
                         {
                             "include": "#type"
@@ -116,6 +134,10 @@
                     ]
                 }
             ]
+        },
+        "module_name": {
+            "match": "([A-Z][\\w']*)(\\.[A-Z][\\w']*)*",
+            "name": "storage.module.icurry"
         }
     },
     "scopeName": "source.icurry"
