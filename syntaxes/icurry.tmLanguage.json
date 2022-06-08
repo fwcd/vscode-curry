@@ -9,6 +9,9 @@
             "include": "#import"
         },
         {
+            "include": "#hiding_declaration"
+        },
+        {
             "include": "#interface_declaration"
         },
         {
@@ -29,11 +32,29 @@
                     "name": "keyword.other.icurry keyword.import.icurry"
                 }
             },
-            "end": ";",
+            "end": ";|}",
             "name": "meta.import.icurry",
             "patterns": [
                 {
                     "include": "#module_name"
+                }
+            ]
+        },
+        "hiding_declaration": {
+            "begin": "^(hiding)\\s+(data|class)\\b",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.icurry keyword.import.icurry"
+                },
+                "2": {
+                    "name": "keyword.other.icurry"
+                }
+            },
+            "end": ";|}",
+            "name": "meta.hiding.icurry",
+            "patterns": [
+                {
+                    "include": "#type"
                 }
             ]
         },
