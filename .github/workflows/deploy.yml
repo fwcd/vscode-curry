@@ -8,16 +8,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: olegtarasov/get-tag@v2.1
         id: tag_name
         with:
           tagRegex: "v(.*)"
           tagRegexGroup: 1
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: '17'
       - name: Install dependencies
         run: npm install
       - name: Compile extension
