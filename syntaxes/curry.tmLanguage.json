@@ -588,12 +588,15 @@
             ]
         },
         "data_declaration": {
-            "begin": "^(\\s*)(data|newtype)\\s+([A-Z][\\w']*)?",
+            "begin": "^(\\s*)(?:(external)\\s+)?(data|newtype)\\s+([A-Z][\\w']*)?",
             "beginCaptures": {
                 "2": {
-                    "name": "keyword.declaration.data.curry"
+                    "name": "keyword.declaration.external.curry"
                 },
                 "3": {
+                    "name": "keyword.declaration.data.curry"
+                },
+                "4": {
                     "name": "constant.other.curry entity.name.type.curry"
                 }
             },
