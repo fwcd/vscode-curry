@@ -684,8 +684,16 @@
             ]
         },
         "fixity_declaration": {
-            "match": "\\binfix[lr]?\\b",
-            "name": "keyword.declaration.fixity.curry"
+            "match": "\\b(infix[lr]?)\\b\\s*(\\d+).+",
+            "captures": {
+                "1": {
+                    "name": "keyword.declaration.fixity.curry"
+                },
+                "2": {
+                    "name": "constant.numeric.fixity.curry"
+                }
+            },
+            "name": "meta.declaration.fixity.curry"
         },
         "function_declarations": {
             "patterns": [
