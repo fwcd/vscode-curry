@@ -690,6 +690,9 @@
         "function_declarations": {
             "patterns": [
                 {
+                    "include": "#fixity_declaration"
+                },
+                {
                     "include": "#function_signature"
                 },
                 {
@@ -700,9 +703,6 @@
                 },
                 {
                     "include": "#external_function_definition"
-                },
-                {
-                    "include": "#fixity_declaration"
                 }
             ]
         },
