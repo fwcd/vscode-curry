@@ -312,7 +312,7 @@
                 },
                 {
                     "match": "\\b(Int(eger)?|Maybe|Either|Bool|Float|Double|Char|String|Ordering|ShowS|ReadS|FilePath|IO(Error)?)\\b",
-                    "name": "storage.type.curry support.type.curry"
+                    "name": "entity.name.type.curry support.type.curry"
                 },
                 {
                     "match": "(?<!')\\b[a-z][\\w']*\\b",
@@ -320,11 +320,12 @@
                 },
                 {
                     "match": "(?<!')\\b[A-Z][\\w']*\\b",
-                    "name": "storage.type.curry"
+                    "name": "entity.name.type.curry"
                 },
                 {
                     "match": "\\(\\)",
-                    "name": "storage.type.curry"
+                    "name": "punctuation.unit.curry",
+                    "comment": "Note that we intentionally (for more consistent highlighting) do not use entity.name.type.curry here since the brackets around tuples are not highlighted like that either"
                 },
                 {
                     "begin": "(\\()",
