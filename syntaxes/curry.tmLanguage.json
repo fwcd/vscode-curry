@@ -221,7 +221,7 @@
         },
         "module_name": {
             "match": "([A-Z][\\w']*)(\\.[A-Z][\\w']*)*",
-            "name": "storage.module.curry"
+            "name": "entity.name.module.curry entity.name.namespace.curry"
         },
         "pragma": {
             "begin": "(\\{-#)\\s+([A-Z_]+)\\b",
