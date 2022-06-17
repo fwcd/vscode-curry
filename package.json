@@ -3,7 +3,7 @@
     "displayName": "Curry",
     "description": "IDE for the functional logic language Curry",
     "version": "0.0.12",
-    "icon": "./icons/extension.png",
+    "icon": "icons/extension.png",
     "publisher": "fwcd",
     "repository": {
         "type": "git",
