@@ -145,7 +145,7 @@
             ]
         },
         "infix_op": {
-            "match": "(\\([^\\w \\)]+\\)|\\(,+\\))",
+            "match": "(\\([^\"'\\w \\)]+\\)|\\(,+\\))",
             "name": "keyword.operator.curry"
         },
         "module_exports": {
