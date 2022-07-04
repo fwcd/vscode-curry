@@ -534,30 +534,23 @@
             ]
         },
         "field_signature": {
-            "begin": "(?=.*?((::)|∷))",
-            "end": "(?=[,}])",
-            "name": "meta.declaration.field.curry",
-            "patterns": [
-                {
-                    "begin": "((::)|∷)",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "keyword.other.double-colon.curry"
-                        }
-                    },
-                    "end": "(?=[,}])",
-                    "name": "meta.declaration.field.signature.curry",
+            "match": "\\b(\\w+)\\s*(::|∷)\\s*(\\S.+)",
+            "name": "meta.declaration.field.signature.curry",
+            "captures": {
+                "1": {
+                    "name": "entity.name.function.curry"
+                },
+                "2": {
+                    "name": "keyword.other.double-colon.curry"
+                },
+                "3": {
                     "patterns": [
                         {
                             "include": "#type"
                         }
                     ]
-                },
-                {
-                    "match": "((?<!')\\b[a-z_][\\w']*|\\(\\W+\\))",
-                    "name": "entity.name.function.curry"
                 }
-            ]
+            }
         },
         "deriving": {
             "match": "\\b(deriving)\\b",
