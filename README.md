@@ -1,7 +1,7 @@
 # Curry IDE for Visual Studio Code
 
 [![Version](https://raster.shields.io/visual-studio-marketplace/v/fwcd.curry)](https://marketplace.visualstudio.com/items?itemName=fwcd.curry)
-[![Build](https://raster.shields.io/github/workflow/status/fwcd/vscode-curry/Build)](https://github.com/fwcd/vscode-curry/actions)
+[![Build](https://raster.shields.io/github/actions/workflow/status/fwcd/vscode-curry/build.yml)](https://github.com/fwcd/vscode-curry/actions)
 [![Downloads](https://raster.shields.io/visual-studio-marketplace/d/fwcd.curry)](https://marketplace.visualstudio.com/items?itemName=fwcd.curry)
 ![TypeScript](https://raster.shields.io/badge/language-TypeScript-2b7489.png)
 
