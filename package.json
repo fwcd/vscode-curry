@@ -122,12 +122,8 @@
                     "enum": [
                         "debug",
                         "info",
-                        "notice",
                         "warning",
-                        "error",
-                        "critical",
-                        "alert",
-                        "emergency"
+                        "error"
                     ],
                     "default": "info",
                     "description": "The language server's logging level"
