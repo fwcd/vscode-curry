@@ -104,11 +104,17 @@
                 },
                 "curry.languageServer.importPaths": {
                     "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
                     "default": [],
                     "description": "Directories for the Curry compiler to search in for imports."
                 },
                 "curry.languageServer.libraryPaths": {
                     "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
                     "default": [],
                     "description": "Directories for the Curry compiler to search in for libraries."
                 },
