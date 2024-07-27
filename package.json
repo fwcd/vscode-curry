@@ -89,6 +89,45 @@
                     "default": true,
                     "description": "[Recommended] Specifies whether the language server should be used."
                 },
+                "curry.languageServer.extensions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the language server extension, for bookkeeping"
+                            },
+                            "extensionPoint": {
+                                "type": "string",
+                                "enum": [
+                                    "hover"
+                                ],
+                                "description": "The language server feature that is to be extended, i.e. where the analysis results will show up"
+                            },
+                            "executable": {
+                                "type": "string",
+                                "description": "The executable to query for analyses"
+                            },
+                            "args": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "default": [],
+                                "description": "The arguments to pass to the executable. May contain placeholders that provide information about the editing context, e.g. {sourceFile} for a path to the edited file or {line} for the current line number. (TODO: Add a comprehensive overview here)"
+                            }
+                        },
+                        "default": {
+                            "name": "Example Extension",
+                            "extensionPoint": "hover",
+                            "executable": "echo",
+                            "args": ["This is an example output: Currently at {sourceFile}:{line}"]
+                        },
+                        "required": ["extensionPoint", "executable"]
+                    },
+                    "description": "External programs that the language server can invoke to provide additional information or analyses e.g. in hovers or other places."
+                },
                 "curry.languageServer.path": {
                     "type": "string",
                     "default": "",
