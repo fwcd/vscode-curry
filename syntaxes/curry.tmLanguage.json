@@ -122,9 +122,6 @@
             "patterns": [
                 {
                     "include": "#block_comment"
-                },
-                {
-                    "include": "#comments"
                 }
             ]
         },
