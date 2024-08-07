@@ -16,7 +16,7 @@
         "publish-extension": "vsce publish"
     },
     "engines": {
-        "vscode": "^1.52.0"
+        "vscode": "^1.79.1"
     },
     "categories": [
         "Programming Languages"
