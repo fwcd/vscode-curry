@@ -130,8 +130,18 @@
                         "default": {
                             "name": "Example Extension",
                             "extensionPoint": "hover",
-                            "executable": "echo",
-                            "args": ["This is an example output: Currently at {sourceFile}:{line}"]
+                            "executable": "printf",
+                            "args": [
+                                "%s\n",
+                                "This is an example output:",
+                                "Current File:   {currentFile}",
+                                "Current URI:    {currentUri}",
+                                "Current Module: {currentModule}",
+                                "Line:           {line}",
+                                "Column:         {column}",
+                                "Expression:     {expression}",
+                                "Type:           {type}"
+                            ]
                         },
                         "required": ["extensionPoint", "executable"]
                     },
