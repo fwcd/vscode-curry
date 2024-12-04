@@ -114,6 +114,11 @@
                                 "default": "plaintext",
                                 "description": "The command's output format"
                             },
+                            "showOutputOnError": {
+                                "type": "boolean",
+                                "default": false,
+                                "description": "Whether to display the standard error if the exit code is 0 (instead of simply not displaying the hover)"
+                            },
                             "executable": {
                                 "type": "string",
                                 "description": "The executable to query for analyses"
