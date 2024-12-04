@@ -105,6 +105,15 @@
                                 ],
                                 "description": "The language server feature that is to be extended, i.e. where the analysis results will show up"
                             },
+                            "outputFormat": {
+                                "type": "string",
+                                "enum": [
+                                    "plaintext",
+                                    "markdown"
+                                ],
+                                "default": "plaintext",
+                                "description": "The command's output format"
+                            },
                             "executable": {
                                 "type": "string",
                                 "description": "The executable to query for analyses"
