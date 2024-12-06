@@ -89,6 +89,70 @@
                     "default": true,
                     "description": "[Recommended] Specifies whether the language server should be used."
                 },
+                "curry.languageServer.extensions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the language server extension, for bookkeeping"
+                            },
+                            "extensionPoint": {
+                                "type": "string",
+                                "enum": [
+                                    "hover"
+                                ],
+                                "description": "The language server feature that is to be extended, i.e. where the analysis results will show up"
+                            },
+                            "outputFormat": {
+                                "type": "string",
+                                "enum": [
+                                    "plaintext",
+                                    "markdown"
+                                ],
+                                "default": "plaintext",
+                                "description": "The command's output format"
+                            },
+                            "showOutputOnError": {
+                                "type": "boolean",
+                                "default": false,
+                                "description": "Whether to display the standard error if the exit code is 0 (instead of simply not displaying the hover)"
+                            },
+                            "executable": {
+                                "type": "string",
+                                "description": "The executable to query for analyses"
+                            },
+                            "args": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "default": [],
+                                "description": "The arguments to pass to the executable. May contain placeholders that provide information about the editing context, e.g. {sourceFile} for a path to the edited file or {line} for the current line number. (TODO: Add a comprehensive overview here)"
+                            }
+                        },
+                        "default": {
+                            "name": "Example Extension",
+                            "extensionPoint": "hover",
+                            "executable": "printf",
+                            "args": [
+                                "%s\n",
+                                "This is an example output:",
+                                "Current File:   {currentFile}",
+                                "Current URI:    {currentUri}",
+                                "Current Module: {currentModule}",
+                                "Line:           {line}",
+                                "Column:         {column}",
+                                "Type:           {type}",
+                                "Identifier:     {identifier}",
+                                "Module:         {module}"
+                            ]
+                        },
+                        "required": ["extensionPoint", "executable"]
+                    },
+                    "description": "External programs that the language server can invoke to provide additional information or analyses e.g. in hovers or other places."
+                },
                 "curry.languageServer.path": {
                     "type": "string",
                     "default": "",
