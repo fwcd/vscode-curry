@@ -144,8 +144,9 @@
                                 "Current Module: {currentModule}",
                                 "Line:           {line}",
                                 "Column:         {column}",
-                                "Expression:     {expression}",
-                                "Type:           {type}"
+                                "Type:           {type}",
+                                "Identifier:     {identifier}",
+                                "Module:         {module}"
                             ]
                         },
                         "required": ["extensionPoint", "executable"]
