@@ -146,7 +146,8 @@
                                 "Column:         {column}",
                                 "Type:           {type}",
                                 "Identifier:     {identifier}",
-                                "Module:         {module}"
+                                "Module:         {module}",
+                                "Symbol Kind:    {symbolKind}"
                             ]
                         },
                         "required": ["extensionPoint", "executable"]
