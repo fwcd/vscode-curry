@@ -2,7 +2,7 @@
     "name": "curry",
     "displayName": "Curry",
     "description": "IDE for the functional logic language Curry",
-    "version": "0.0.20",
+    "version": "0.0.21",
     "icon": "icons/extension.png",
     "publisher": "fwcd",
     "repository": {
