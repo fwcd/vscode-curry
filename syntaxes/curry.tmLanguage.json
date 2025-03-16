@@ -531,7 +531,7 @@
             ]
         },
         "field_signature": {
-            "match": "\\b(\\w+)\\s*(::|∷)\\s*([^,}]+)",
+            "match": "\\b(\\w+)\\s*(::|∷)\\s*(.*--.*|[^,}]+)",
             "name": "meta.declaration.field.signature.curry",
             "captures": {
                 "1": {
